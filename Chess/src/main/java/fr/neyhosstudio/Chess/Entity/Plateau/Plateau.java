@@ -41,11 +41,11 @@ public class Plateau {
     public Plateau(){
         this.row1 = initRow(true, T, C, F, R, K, F, C, T);
         this.row2 = initRow(false, P, P, P, P, P, P, P, P);
-        this.row3 = initRow(false, V, V, V, V, V, V, V, V);
+        this.row3 = initRow(true, V, V, V, V, V, V, V, V);
         this.row4 = initRow(false, V, V, V, V, V, V, V, V);
-        this.row5 = initRow(false, V, V, V, V, V, V, V, V);
+        this.row5 = initRow(true, V, V, V, V, V, V, V, V);
         this.row6 = initRow(false, V, V, V, V, V, V, V, V);
-        this.row7 = initRow(false, P, P, P, P, P, P, P, P);
+        this.row7 = initRow(true, P, P, P, P, P, P, P, P);
         this.row8 = initRow(false, T, C, F, R, K, F, C, T);
     }
 
