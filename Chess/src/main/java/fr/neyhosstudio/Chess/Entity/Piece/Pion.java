@@ -3,11 +3,11 @@ package fr.neyhosstudio.Chess.Entity.Piece;
 
 /**
  * Pion herite de Piece.
- *
+ * <p>
  * Le pion pourra:
  * -Se deplacer d'1 a 2 cases vers l'avant lors de son premier deplacement puis d une seul case par tour.
  * -Prendre les pieces aui se trouve en diagonale devant lui a une distance d'1 case.
- *-Etre promu en une autre piece au choix si il atteint le bout de sa colonne.
+ * -Etre promu en une autre piece au choix si il atteint le bout de sa colonne.
  */
 
 public class Pion extends Piece {
@@ -19,15 +19,17 @@ public class Pion extends Piece {
     public Piece promote(String nomPiece) {
         switch (nomPiece) {
             case "Cavalier":
-                break;
+                return null;
             case "Fou":
-                break;
+                return null;
             case "Tour":
-                break;
+                return null;
             case "Reine":
-                break;
+                return null;
             case "Roi":
-                break;
+                return null;
+            default:
+                return null;
         }
     }
 }
