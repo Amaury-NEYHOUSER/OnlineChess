@@ -1,7 +1,4 @@
-package fr.neyhosstudio.Chess.Entity;
-
-import lombok.Getter;
-import lombok.Setter;
+package fr.neyhosstudio.Chess.Entity.Plateau;
 
 import java.util.ArrayList;
 import java.util.List;

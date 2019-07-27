@@ -1,8 +1,7 @@
 package fr.neyhosstudio.Chess;
 
-import fr.neyhosstudio.Chess.Entity.Case;
-import fr.neyhosstudio.Chess.Entity.Plateau;
-import org.springframework.boot.SpringApplication;
+import fr.neyhosstudio.Chess.Entity.Plateau.Case;
+import fr.neyhosstudio.Chess.Entity.Plateau.Plateau;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package fr.neyhosstudio.Chess.Entity;
+package fr.neyhosstudio.Chess.Entity.Piece;
 
 
 /**
