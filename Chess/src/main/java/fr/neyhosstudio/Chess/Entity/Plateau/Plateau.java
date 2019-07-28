@@ -134,5 +134,58 @@ public class Plateau {
         this.row8 = row8;
     }
 
+    String pieceD;      // piece a deplacer
 
+    public List<Case[]> DeplacerPionLigneCase(int lnd, int cd, int lna, int ca) {
+        int ligneD = lnd - 1;     //ligne de depart
+        int caseD = cd -1;       //case de depart
+        int ligneA = lna - 1;     //ligne d'arrive
+        int caseA = ca - 1;       //case d'arrive
+
+        if(ligneD == 0){    // trouver la ligne de depart et prendre la bonne piece
+            pieceD = this.row1[caseD].getContainedPionName();
+            this.row1[caseD].setContainedPionName(V);
+        } else if(ligneD == 1){
+            pieceD = this.row2[caseD].getContainedPionName();
+            this.row2[caseD].setContainedPionName(V);
+        } else if(ligneD == 2){
+            pieceD = this.row3[caseD].getContainedPionName();
+            this.row3[caseD].setContainedPionName(V);
+        } else if(ligneD == 3){
+            pieceD = this.row4[caseD].getContainedPionName();
+            this.row4[caseD].setContainedPionName(V);
+        } else if(ligneD == 4){
+            pieceD = this.row5[caseD].getContainedPionName();
+            this.row5[caseD].setContainedPionName(V);
+        } else if(ligneD == 5){
+            pieceD = this.row6[caseD].getContainedPionName();
+            this.row6[caseD].setContainedPionName(V);
+        } else if(ligneD == 6){
+            pieceD = this.row7[caseD].getContainedPionName();
+            this.row7[caseD].setContainedPionName(V);
+        } else if(ligneD == 7){
+            pieceD = this.row8[caseD].getContainedPionName();
+            this.row8[caseD].setContainedPionName(V);
+        }
+
+        if(ligneA == 0){    // trouver la ligne d'arrive et placer la piece
+            this.row1[caseA].setContainedPionName(pieceD);
+        } else if(ligneA == 1){
+            this.row2[caseA].setContainedPionName(pieceD);
+        } else if(ligneA == 2){
+            this.row3[caseA].setContainedPionName(pieceD);
+        } else if(ligneA == 3){
+            this.row4[caseA].setContainedPionName(pieceD);
+        } else if(ligneA == 4){
+            this.row5[caseA].setContainedPionName(pieceD);
+        } else if(ligneA == 5){
+            this.row6[caseA].setContainedPionName(pieceD);
+        } else if(ligneA == 6){
+            this.row7[caseA].setContainedPionName(pieceD);
+        } else if(ligneA == 7){
+            this.row8[caseA].setContainedPionName(pieceD);
+        }
+
+        return getAllRows();
+    }
 }

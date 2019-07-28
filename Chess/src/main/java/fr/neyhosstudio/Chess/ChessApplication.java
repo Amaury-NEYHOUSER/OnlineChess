@@ -9,30 +9,32 @@ import java.util.List;
 @SpringBootApplication
 public class ChessApplication {
 
-	public static void main(String[] args) {
-		//SpringApplication.run(ChessApplication.class, args);
+    public static void main(String[] args) {
+        //SpringApplication.run(ChessApplication.class, args);
 
-		// Creation du plateau
-		Plateau jeu = new Plateau();
-		List<Case[]> plateau = jeu.getAllRows();
+        // Creation du plateau
+        Plateau jeu = new Plateau();
+        List<Case[]> plateau = jeu.getAllRows();
 
-		// Parcour des lignes
-		for (Case[] row : plateau
-			 ) {
-			// parcour des case
-			for (Case c : row
-				 ) {
-				System.out.print(
-						String.valueOf(c.getContainedPionName().charAt(0)) +
-						" | "
-				);
-			}
-			System.out.print("\n");
-		}
+        jeu.DeplacerPionLigneCase(1,2,3,1);
 
+        // Parcour des lignes
+        for (Case[] row : plateau
+        ) {
+            // parcour des case
+            for (Case c : row
+            ) {
+                System.out.print(
+                        String.valueOf(c.getContainedPionName().charAt(0)) +
+                                " | "
+                );
+            }
+            System.out.print("\n");
+        }
 
-	}
+        System.out.println();
 
+    }
 
 
 }

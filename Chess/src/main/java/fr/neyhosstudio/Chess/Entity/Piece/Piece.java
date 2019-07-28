@@ -28,4 +28,6 @@ public abstract class Piece {
     public String getNomPiece() {
         return nomPiece;
     }
+
+
 }
