@@ -49,6 +49,19 @@ public class Plateau {
         this.row8 = initRow(false, T, C, F, R, K, F, C, T);
     }
 
+    /**
+     * Generate a row of chess
+     * @param firstIsSombre the type of the case white / black
+     * @param pieceNameCase1 the piece name in the case 1
+     * @param pieceNameCase2 the piece name in the case 2
+     * @param pieceNameCase3 the piece name in the case 3
+     * @param pieceNameCase4 the piece name in the case 4
+     * @param pieceNameCase5 the piece name in the case 5
+     * @param pieceNameCase6 the piece name in the case 6
+     * @param pieceNameCase7 the piece name in the case 7
+     * @param pieceNameCase8 the piece name in the case 8
+     * @return an array as row
+     */
     private Case[] initRow(boolean firstIsSombre,
                            String pieceNameCase1,
                            String pieceNameCase2,
@@ -71,8 +84,12 @@ public class Plateau {
         };
     }
 
+    /**
+     * Return the list of 8 rows with 8 cases inside
+     * @return the plateau
+     */
     public List<Case[]> getAllRows(){
-        List <Case[]> list = new ArrayList<Case[]>();
+        List <Case[]> list = new ArrayList<>();
             list.add(this.row1);
             list.add(this.row2);
             list.add(this.row3);
@@ -134,58 +151,44 @@ public class Plateau {
         this.row8 = row8;
     }
 
-    String pieceD;      // piece a deplacer
 
-    public List<Case[]> DeplacerPionLigneCase(int lnd, int cd, int lna, int ca) {
-        int ligneD = lnd - 1;     //ligne de depart
-        int caseD = cd -1;       //case de depart
-        int ligneA = lna - 1;     //ligne d'arrive
-        int caseA = ca - 1;       //case d'arrive
+    public void DeplacerPionLigneCase(int rowFromIndex, int caseFromIndex, int rowToIndex, int caseToIndex) {
 
-        if(ligneD == 0){    // trouver la ligne de depart et prendre la bonne piece
-            pieceD = this.row1[caseD].getContainedPionName();
-            this.row1[caseD].setContainedPionName(V);
-        } else if(ligneD == 1){
-            pieceD = this.row2[caseD].getContainedPionName();
-            this.row2[caseD].setContainedPionName(V);
-        } else if(ligneD == 2){
-            pieceD = this.row3[caseD].getContainedPionName();
-            this.row3[caseD].setContainedPionName(V);
-        } else if(ligneD == 3){
-            pieceD = this.row4[caseD].getContainedPionName();
-            this.row4[caseD].setContainedPionName(V);
-        } else if(ligneD == 4){
-            pieceD = this.row5[caseD].getContainedPionName();
-            this.row5[caseD].setContainedPionName(V);
-        } else if(ligneD == 5){
-            pieceD = this.row6[caseD].getContainedPionName();
-            this.row6[caseD].setContainedPionName(V);
-        } else if(ligneD == 6){
-            pieceD = this.row7[caseD].getContainedPionName();
-            this.row7[caseD].setContainedPionName(V);
-        } else if(ligneD == 7){
-            pieceD = this.row8[caseD].getContainedPionName();
-            this.row8[caseD].setContainedPionName(V);
+        // get the plateau
+        List<Case[]> x = getAllRows();
+
+        // from case
+        Case[] rowFrom = x.get(rowFromIndex);    // Row from index
+        Case from = rowFrom[caseFromIndex];     // Case from index
+        String nameFrom = from.getContainedPionName();
+
+        // to case
+        Case[] rowTo = x.get(rowToIndex);     // Row to index
+        Case to = rowTo[caseToIndex];     // Case to index
+        String nameTo = to.getContainedPionName();
+
+        // from become
+        rowFrom[caseFromIndex].setContainedPionName(nameTo);
+
+        // to become
+        rowTo[caseToIndex].setContainedPionName(nameFrom);
+
+        // replace int plateau (x)
+        x.set(rowFromIndex, rowFrom);
+        x.set(rowToIndex, rowTo);
+
+    }
+
+    public void affichageDuPlateau(){
+        // Affichage du plateau
+        for (Case[] row : this.getAllRows()
+        ) {
+            for (Case c : row
+            ) {
+                System.out.print(c.getContainedPionName().charAt(0) +" | ");
+            }
+            System.out.print("\n");
         }
-
-        if(ligneA == 0){    // trouver la ligne d'arrive et placer la piece
-            this.row1[caseA].setContainedPionName(pieceD);
-        } else if(ligneA == 1){
-            this.row2[caseA].setContainedPionName(pieceD);
-        } else if(ligneA == 2){
-            this.row3[caseA].setContainedPionName(pieceD);
-        } else if(ligneA == 3){
-            this.row4[caseA].setContainedPionName(pieceD);
-        } else if(ligneA == 4){
-            this.row5[caseA].setContainedPionName(pieceD);
-        } else if(ligneA == 5){
-            this.row6[caseA].setContainedPionName(pieceD);
-        } else if(ligneA == 6){
-            this.row7[caseA].setContainedPionName(pieceD);
-        } else if(ligneA == 7){
-            this.row8[caseA].setContainedPionName(pieceD);
-        }
-
-        return getAllRows();
+        System.out.println();
     }
 }

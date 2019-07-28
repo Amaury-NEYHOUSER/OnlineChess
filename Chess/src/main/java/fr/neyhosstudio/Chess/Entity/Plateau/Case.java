@@ -1,9 +1,5 @@
 package fr.neyhosstudio.Chess.Entity.Plateau;
 
-import lombok.Data;
-
-import java.util.Objects;
-
 /**
  * Une case peut-être :
  * - sombre ou claire

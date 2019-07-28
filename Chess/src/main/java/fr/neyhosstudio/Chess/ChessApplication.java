@@ -1,10 +1,8 @@
 package fr.neyhosstudio.Chess;
 
-import fr.neyhosstudio.Chess.Entity.Plateau.Case;
 import fr.neyhosstudio.Chess.Entity.Plateau.Plateau;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.List;
 
 @SpringBootApplication
 public class ChessApplication {
@@ -13,28 +11,25 @@ public class ChessApplication {
         //SpringApplication.run(ChessApplication.class, args);
 
         // Creation du plateau
-        Plateau jeu = new Plateau();
-        List<Case[]> plateau = jeu.getAllRows();
+        Plateau plateau = new Plateau();
 
-        jeu.DeplacerPionLigneCase(1,2,3,1);
+		// Afficher le plateau
+		System.out.println("TOUR 1");
+		plateau.affichageDuPlateau();
 
-        // Parcour des lignes
-        for (Case[] row : plateau
-        ) {
-            // parcour des case
-            for (Case c : row
-            ) {
-                System.out.print(
-                        String.valueOf(c.getContainedPionName().charAt(0)) +
-                                " | "
-                );
-            }
-            System.out.print("\n");
-        }
+        // Deplacer un pion
+        plateau.DeplacerPionLigneCase(0,1,2,0);
 
-        System.out.println();
+        // Afficher le plateau
+		System.out.println("TOUR 2");
+        plateau.affichageDuPlateau();
+
+
+
 
     }
+
+
 
 
 }
