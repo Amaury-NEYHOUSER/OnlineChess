@@ -1,6 +1,5 @@
 package fr.neyhosstudio.Chess.Entity.Piece;
 
-
 /**
  * Pion herite de Piece.
  * <p>
@@ -12,6 +11,10 @@ package fr.neyhosstudio.Chess.Entity.Piece;
 
 public class Pion extends Piece {
 
+    public Pion(){
+        this.valeur = 1;
+        this.nomPiece = "Pion";
+    }
     /**
      * @param nomPiece nom de la piece qui remplacera le pion
      * @return la piece choisis
@@ -19,15 +22,15 @@ public class Pion extends Piece {
     public Piece promote(String nomPiece) {
         switch (nomPiece) {
             case "Cavalier":
-                return null;
+                new Cavalier();
             case "Fou":
-                return null;
+                new Fou();
             case "Tour":
-                return null;
+                new Tour();
             case "Reine":
-                return null;
+                new Reine();
             case "Roi":
-                return null;
+                new Roi();
             default:
                 return null;
         }

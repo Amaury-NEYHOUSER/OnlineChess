@@ -2,6 +2,7 @@ package fr.neyhosstudio.Chess.Entity.Plateau;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Le plateau d'échec est composé de :
@@ -92,7 +93,7 @@ public class Plateau {
     }
 
 
-    public void DeplacerPionLigneCase(int rowFromIndex, int caseFromIndex, int rowToIndex, int caseToIndex) {
+    public void deplacerPionLigneCase(int rowFromIndex, int caseFromIndex, int rowToIndex, int caseToIndex) {
 
 
 

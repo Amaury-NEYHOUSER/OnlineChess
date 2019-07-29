@@ -11,4 +11,9 @@ package fr.neyhosstudio.Chess.Entity.Piece;
 
 public class Cavalier extends Piece {
 
+    public Cavalier(){
+        this.valeur = 3;
+        this.nomPiece = "Cavalier";
+    }
+
 }

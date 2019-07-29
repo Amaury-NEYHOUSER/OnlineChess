@@ -8,4 +8,9 @@ package fr.neyhosstudio.Chess.Entity.Piece;
  * -Prendre une piece ennemie sur ses cases de deplacement.
  */
 public class Fou extends Piece {
+
+    public Fou(){
+        this.valeur = 3;
+        this.nomPiece = "Fou";
+    }
 }

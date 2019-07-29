@@ -13,13 +13,8 @@ package fr.neyhosstudio.Chess.Entity.Piece;
 
 public abstract class Piece {
 
-    private boolean isAlive;    //etat de la piece
-    private int valeur;         //valeur de la piece
-    private String nomPiece;    //nom de la piece
-
-    public boolean isAlive() {
-        return isAlive;
-    }
+    protected int valeur;         //valeur de la piece
+    protected String nomPiece;    //nom de la piece
 
     public int getValeur() {
         return valeur;
@@ -28,6 +23,5 @@ public abstract class Piece {
     public String getNomPiece() {
         return nomPiece;
     }
-
 
 }
